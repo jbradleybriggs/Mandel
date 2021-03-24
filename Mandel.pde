@@ -4,6 +4,8 @@ double zoomAmount=2;
 double zoomLevel=1;
 boolean draw=true;
 
+//double 
+
 void setup() {
   size(1200, 1000) ;
   
@@ -97,6 +99,14 @@ void mouseReleased() {
     value=newMin+(newMax-newMin)*((value-valueMin)/(valueMax-valueMin));
     return value;
  }
+ 
+void keyPressed() {
+  if (keyCode == ENTER) {
+    saveFrame("./saves/mandel-######.png");
+  } else if (keyCode==ESC) {
+    
+  }
+}
 
 color linInterp(color c1, color c2, float p, int i0) {
   return ceil( c1 + i0*p*(c2-c1) );  
